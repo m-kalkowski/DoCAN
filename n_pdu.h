@@ -4,6 +4,9 @@
 #include <stdint.h> 
 #include <stdbool.h> 
 
+
+#define N_WFTmax (0x5)
+
 typedef enum
 {
     SINGLE_FRAME      = 0x0,
@@ -19,7 +22,14 @@ typedef uint16_t FF_DL_t;
 
 typedef uint8_t SN_t;
 
-typedef uint8_t FS_t;
+typedef enum
+{
+    CTS   = 0x0,
+    WAIT  = 0x1,
+    OVFLW = 0x02    
+
+} FS_t;
+
 typedef uint8_t BS_t;
 typedef uint8_t STmin_t;
 
