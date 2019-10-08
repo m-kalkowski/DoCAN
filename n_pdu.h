@@ -3,6 +3,7 @@
 
 #include <stdint.h> 
 #include <stdbool.h> 
+#include "n_sdu.h" 
 
 
 #define N_WFTmax (0x5)
