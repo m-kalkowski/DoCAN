@@ -5,7 +5,20 @@
 #include <stdbool.h> 
 
 
-typedef uint32_t Identifier_t;
+typedef enum 
+{
+    STANDARD,
+    EXTENDED
+
+} Identifier_Type_t
+
+typedef struct
+{
+    Identifier_Type_t Type;
+    
+    uint32_t Id; 
+
+} Identifier_t;
 
 typedef uint8_t DLC_t;
 
@@ -25,6 +38,9 @@ typedef struct
     void (*confirm)(Identifier_t, Transfer_Status_t);
     void (*indication)(Identifier_t, Transfer_Status_t);
 
-} L_Data;
+} L_Data_t;
+
+extern L_Data_t L_Data;
+
 
 #endif
