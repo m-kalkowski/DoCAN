@@ -15,49 +15,12 @@
 * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 * 
 */
-#ifndef _DLL_IF_H_
-#define _DLL_IF_H_
+#include "tl_prot.h"
 
-#include <stdint.h> 
-#include <stdbool.h> 
-
-
-typedef enum 
+ 
+void tl_process(N_PDU_t *N_PDU)
 {
-    STANDARD,
-    EXTENDED
 
-} Identifier_Type_t
-
-typedef struct
-{
-    Identifier_Type_t Type;
-    
-    uint32_t Id; 
-
-} Identifier_t;
-
-typedef uint8_t DLC_t;
-
-typedef uint8_t * Data_t;
-
-typedef enum
-{
-    COMPLETE,
-    NOT_COMPLETE,
-    ABORTED
-
-} Transfer_Status_t;
-
-typedef struct
-{
-    void (*request)(Identifier_t, DLC_t, Data_t);
-    void (*confirm)(Identifier_t, Transfer_Status_t);
-    void (*indication)(Identifier_t, DLC_t, Data_t);
-
-} L_Data_t;
-
-extern L_Data_t L_Data;
+}
 
 
-#endif

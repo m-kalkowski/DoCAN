@@ -1,3 +1,20 @@
+/* Copyright (C) 
+* 2019 - Mateusz Kalkowski
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public License
+* as published by the Free Software Foundation; either version 2
+* of the License, or (at your option) any later version.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+* 
+*/
 #ifndef _N_PDU_H_
 #define _N_PDU_H_
 
@@ -8,6 +25,11 @@
 
 #define N_WFTmax (0x5)
 
+#define N_PCI_GET_TYPE(x)  ((uint8_t)x >> 4u)
+
+/**
+* @brief network protocol control information type
+*/
 typedef enum
 {
     SINGLE_FRAME      = 0x0,
@@ -17,12 +39,24 @@ typedef enum
 
 } N_PCItype_t;
 
+/**
+* @brief SingleFrame DataLength
+*/
 typedef uint8_t SF_DL_t;
 
+/**
+* @brief FirstFrame DataLength
+*/
 typedef uint16_t FF_DL_t;
 
+/**
+* @brief SequenceNumber
+*/
 typedef uint8_t SN_t;
 
+/**
+* @brief FlowStatus
+*/
 typedef enum
 {
     CTS   = 0x0,
@@ -31,9 +65,19 @@ typedef enum
 
 } FS_t;
 
+/**
+* @brief BlockSize
+*/
 typedef uint8_t BS_t;
+
+/**
+* @brief SeparationTime minimum
+*/
 typedef uint8_t STmin_t;
 
+/**
+* @brief 
+*/
 typedef struct
 {
     N_PCItype_t N_PCItype : 4;
@@ -41,6 +85,9 @@ typedef struct
 
 } N_PCI_SF_t;
 
+/**
+* @brief 
+*/
 typedef struct
 {
     N_PCItype_t N_PCItype : 4;
@@ -48,6 +95,9 @@ typedef struct
 
 } N_PCI_FF_t;
 
+/**
+* @brief 
+*/
 typedef struct
 {
     N_PCItype_t N_PCItype : 4;
@@ -55,6 +105,9 @@ typedef struct
 
 } N_PCI_CF_t;
 
+/**
+* @brief 
+*/
 typedef struct
 {
     N_PCItype_t N_PCItype : 4;
@@ -64,6 +117,9 @@ typedef struct
 
 } N_PCI_FC_t;
 
+/**
+* @brief 
+*/
 typedef union
 {
     N_PCI_SF_t SF;
@@ -73,8 +129,14 @@ typedef union
 
 } N_PCI_t;
 
+/**
+* @brief 
+*/
 typedef uint8_t * N_Data_t;
 
+/**
+* @brief 
+*/
 typedef struct 
 {
    N_AI_t   N_AI;

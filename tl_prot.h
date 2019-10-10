@@ -15,17 +15,10 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * 
  */
-/**
- * @file tl_prot.h
- * @brief 
- * @author Mateusz Kalkowski
- * @version 0.1
- * @date 2019-10-09
- */
 #ifndef _TL_PROT_H_
 #define _TL_PROT_H_
 
-#include "n_sdu.h"
+#include "n_pdu.h"
 
 
 /**
@@ -34,14 +27,6 @@
  * @param MessageData_t
  * @param Length_t
  */
-void tl_send(MessageData_t, Length_t);
-
-/**
- * @brief 
- *
- * @param MessageData_t
- * @param Length_t
- */
-void tl_receive(MessageData_t, Length_t);
+void tl_process(N_PDU_t *N_PDU);
 
 #endif

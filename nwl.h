@@ -15,49 +15,38 @@
 * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 * 
 */
-#ifndef _DLL_IF_H_
-#define _DLL_IF_H_
+#ifndef _NWL_H_
+#define _NWL_H_
 
-#include <stdint.h> 
-#include <stdbool.h> 
+#include "dll_if.h"
 
-
-typedef enum 
-{
-    STANDARD,
-    EXTENDED
-
-} Identifier_Type_t
-
-typedef struct
-{
-    Identifier_Type_t Type;
-    
-    uint32_t Id; 
-
-} Identifier_t;
-
-typedef uint8_t DLC_t;
-
-typedef uint8_t * Data_t;
-
+/**
+* @brief NWL status
+*/
 typedef enum
 {
-    COMPLETE,
-    NOT_COMPLETE,
-    ABORTED
+    SEGMENTED_TRANSMIT_IN_PROGRESS,
+    SEGMENTED_RECEIVE_IN_PROGRESS,
+    IDLE    
 
-} Transfer_Status_t;
+} nwl_status_t;
 
-typedef struct
-{
-    void (*request)(Identifier_t, DLC_t, Data_t);
-    void (*confirm)(Identifier_t, Transfer_Status_t);
-    void (*indication)(Identifier_t, DLC_t, Data_t);
+/**
+* @brief 
+*
+* @param Identifier CAN identifier
+* @param DLC data length code
+* @param Data CAN frame data
+*/
+void nwl_send(Identifier_t Identifier, DLC_t DLC, Data_t Data);
 
-} L_Data_t;
-
-extern L_Data_t L_Data;
-
+/**
+* @brief 
+*
+* @param Identifier CAN identifier
+* @param DLC data length code
+* @param Data CAN frame data
+*/
+void nwl_receive(Identifier_t Identifier, DLC_t DLC, Data_t Data);
 
 #endif

@@ -15,13 +15,6 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  * 
  */
-/**
- * @file n_sdu.h
- * @brief 
- * @author Mateusz Kalkowski
- * @version 0.1
- * @date 2019-10-09
- */
 #ifndef _N_SDU_H_
 #define _N_SDU_H_
 
@@ -130,7 +123,7 @@ typedef struct
     N_TAtype_t N_TAtype;
     N_AE_t     N_AE;
 
-} N_AI_t
+} N_AI_t;
 
 /**
  * @brief 
