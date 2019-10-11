@@ -132,16 +132,72 @@ typedef union
 /**
 * @brief 
 */
-typedef uint8_t * N_Data_t;
+typedef uint8_t N_Data_t;
 
 /**
-* @brief 
+* @brief N_PDU SingleFrame 
 */
 typedef struct 
 {
-   N_AI_t   N_AI;
-   N_PCI_t  N_PCI;
-   N_Data_t N_Data;
+    N_AI_SF_t   N_AI;
+    N_PCI_SF_t  N_PCI;
+#if defined(USE_EXTENDED_ADDRESSING)
+    N_Data_t    N_Data[6];
+#else
+    N_Data_t    N_Data[7];
+#endif
+    
+} N_PDU_SF_t;
+
+/**
+* @brief N_PDU FirstFrame 
+*/
+typedef struct 
+{
+    N_AI_FF_t   N_AI;
+    N_PCI_FF_t  N_PCI;
+#if defined(USE_EXTENDED_ADDRESSING)
+    N_Data_t    N_Data[5];
+#else
+    N_Data_t    N_Data[6];
+#endif
+    
+} N_PDU_FF_t;
+
+/**
+* @brief N_PDU ConsecutiveFrame 
+*/
+typedef struct 
+{
+    N_AI_CF_t   N_AI;
+    N_PCI_CF_t  N_PCI;
+#if defined(USE_EXTENDED_ADDRESSING)
+    N_Data_t    N_Data[6];
+#else
+    N_Data_t    N_Data[7];
+#endif
+    
+} N_PDU_CF_t;
+
+/**
+* @brief N_PDU FlowControl
+*/
+typedef struct 
+{
+    N_AI_FC_t   N_AI;
+    N_PCI_FC_t  N_PCI;
+    
+} N_PDU_FC_t;
+
+/**
+* @brief N_PDU 
+*/
+typedef union 
+{
+    N_PDU_SF_t SF;    
+    N_PDU_FF_t FF;    
+    N_PDU_CF_t CF;
+    N_PDU_FC_t FC;
 
 } N_PDU_t;
 

@@ -32,32 +32,6 @@ typedef enum
 
 } Mtype_t;
 
-
-/**
- * @brief 
- */
-typedef uint8_t N_SA_t;
-
-/**
- * @brief 
- */
-typedef uint8_t N_TA_t;
-
-/**
- * @brief 
- */
-typedef enum
-{
-    PHYSICAL,
-    FUNCTIONAL
-
-} N_TAtype_t;
-
-/**
- * @brief 
- */
-typedef uint8_t N_AE_t;
-
 /**
  * @brief 
  */
