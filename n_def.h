@@ -19,13 +19,8 @@
 #define _N_DEF_H_
 
 
-typedef enum
-{
-   N_AddressingFormat_NORMAL, 
-   N_AddressingFormat_NORMAL_FIXED, 
-   N_AddressingFormat_EXTENDED, 
-   N_AddressingFormat_MIXED_29,
-   N_AddressingFormat_MIXED_11
-
-} N_AddressingFormat_t;
-
+#define N_ADDRESSING_FORMAT_NORMAL, 
+#define N_ADDRESSING_FORMAT_NORMAL_FIXED, 
+#define N_ADDRESSING_FORMAT_EXTENDED, 
+#define N_ADDRESSING_FORMAT_MIXED_29,
+#define N_ADDRESSING_FORMAT_MIXED_11

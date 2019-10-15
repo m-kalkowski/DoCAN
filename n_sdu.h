@@ -90,18 +90,6 @@ typedef enum
 /**
  * @brief 
  */
-typedef struct
-{
-    N_SA_t     N_SA;
-    N_TA_t     N_TA;
-    N_TAtype_t N_TAtype;
-    N_AE_t     N_AE;
-
-} N_AI_t;
-
-/**
- * @brief 
- */
 typedef struct 
 {
     void (* request)(Mtype_t, N_SA_t, N_TA_t, N_TAtype_t, N_AE_t, MessageData_t, Length_t);    

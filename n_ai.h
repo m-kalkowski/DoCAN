@@ -41,11 +41,6 @@ typedef enum
 } N_TAtype_t;
 
 /**
- * @brief Network Address Extension
- */
-typedef uint8_t N_AE_t;
-
-/**
 * @brief Address Information for Mtype = diagnostics
 */
 typedef struct  
