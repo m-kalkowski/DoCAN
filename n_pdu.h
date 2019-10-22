@@ -27,6 +27,19 @@
 
 #define N_PCI_GET_TYPE(x)  ((uint8_t)x >> 4u)
 
+
+typedef enum
+{
+    ADDR_FORMAT_NORMAL_11Bit,    
+    ADDR_FORMAT_NORMAL_29Bit,
+    ADDR_FORMAT_EXTENDED_11Bit,    
+    ADDR_FORMAT_EXTENDED_29Bit,    
+    ADDR_FORMAT_NORMAL_FIXED_29Bit,    
+    ADDR_FORMAT_MIXED_11Bit,
+    ADDR_FORMAT_MIXED_29Bit,
+
+} addr_format;
+
 /**
 * @brief network protocol control information type
 */
